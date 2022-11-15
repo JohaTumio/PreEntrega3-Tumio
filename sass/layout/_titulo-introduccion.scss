@@ -1,0 +1,43 @@
+@use "../base/extend";
+@use "../base/variables";
+@use "../base/mixin";
+@use "../base/listas";
+@use "../base/mapas";
+
+/* MOVILE FIRST TITULO INTRODUCCION */
+.titulo_introduccion {
+    font-size: 3rem;
+    margin: 1rem;
+    font-family: variables.$font-family-subtitulo;
+    color: variables.$color-subtitulo;
+    animation: focus-in-expand-fwd 0.8s ease-in-out both;
+    //Animacion subtitulo//
+    @keyframes focus-in-expand-fwd {
+        0% {
+        letter-spacing: -0.5em;
+        transform: translateZ(-800px);
+        filter: blur(12px);
+        opacity: 0;
+        }
+        100% {
+        transform: translateZ(0);
+        filter: blur(0);
+        opacity: 1;
+        }
+    }//Fin animacion subtitulo//
+}
+/* VISTA TABLET TITULO INTRODUCCION */
+@media (min-width: 768px){
+    .titulo_introduccion {
+        font-size: 5rem;
+    }
+}
+/* VISTA DESKTOP TITULO INTRODUCCION */
+@media (min-width: 1024px) {
+    .titulo_introduccion {
+        font-size: 5rem;
+        margin: 4rem;
+        border-style: nth(listas.$bordes, 3);
+        border-width:3px;
+    }
+}

@@ -1,0 +1,52 @@
+@use "../base/extend";
+@use "../base/variables";
+@use "../base/mixin";
+@use "../base/listas";
+@use "../base/mapas";
+/* MOVILE FIRST PAGINA PRODUCTOS */
+main{
+    #galeria{
+        div{
+            .img_galeria_productos{
+                margin-top: 3rem;
+                div{
+                    img{
+                        @include mixin.height-width (25rem,25rem);
+                        @extend %border-radius;
+                        margin-bottom:1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+/* VISTA TABLET PAGINA PRODUCTOS */
+@media (min-width: 768px){
+    main{
+        #galeria{
+            div{
+                .img_galeria_productos{
+                    margin-top: 5rem;
+                    div{
+                        img{
+                            @include mixin.height-width (30rem,30rem);
+                            margin-bottom:3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* VISTA DESKTOP PAGINA PRODUCTOS */
+@media (min-width: 1024px){
+    main{
+        #galeria{
+            div{
+                .img_galeria_productos{
+                    margin-top: 5rem;
+                }
+            }
+        }
+    }
+}

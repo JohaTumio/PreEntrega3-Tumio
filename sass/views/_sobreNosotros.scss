@@ -1,0 +1,27 @@
+@use "../base/extend";
+@use "../base/variables";
+@use "../base/mixin";
+@use "../base/listas";
+@use "../base/mapas";
+
+/* MOVILE FIRST SOBRE NOSOTROS */
+.section_sobre_nosotros{
+    border-style: nth(listas.$bordes, 2);
+    margin: 1rem;
+    background-image: variables.$fondo-p-sobreNosotros;
+    font-weight: bolder;
+}
+
+/* VISTA TABLET SOBRE NOSOTROS */
+@media (min-width: 768px){
+    .section_sobre_nosotros{
+        margin: 2.5rem;
+    }
+}
+
+/* VISTA DESKTOP SOBRE NOSOTROS */
+@media (min-width: 1024px){
+    .section_sobre_nosotros{
+        margin: 4rem;
+    }
+}

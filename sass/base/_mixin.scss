@@ -1,0 +1,16 @@
+@mixin display-flex ($display, $justify-content, $align-items){
+display: $display;
+justify-content: $justify-content;
+align-items: $align-items;
+}
+
+@mixin display-grid ($display, $grid-template-comuns, $grid-template-rows){
+    display: $display;
+    grid-template-columns: $grid-template-comuns;
+    grid-template-rows: $grid-template-rows;
+}
+
+@mixin height-width ($height, $width){
+    height: $height;
+    width: $width;
+}

@@ -1,0 +1,25 @@
+@use "../base/extend";
+@use "../base/variables";
+@use "../base/mixin";
+@use "../base/listas";
+@use "../base/mapas";
+
+/* VISTA MOVIL FIRST PARRAFO INTRODUCCION */
+.p_introduccion{
+    font-size: 1.5rem;
+    margin: 0.5rem;
+}
+/* VISTA TABLET PARRAFO INTRODUCCION */
+@media (min-width: 768px){
+    .p_introduccion{
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+}
+/* VISTA DESKTOP PARRAFO INTRODUCCION */
+@media (min-width: 1024px){
+    .p_introduccion{
+        font-size: 2.8rem;
+        margin: 2rem;
+    }
+}

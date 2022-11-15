@@ -1,0 +1,76 @@
+@use "../base/extend";
+@use "../base/variables";
+@use "../base/mixin";
+@use "../base/listas";
+@use "../base/mapas";
+
+//boton ver todos inicio//
+.container_button_productos{
+    @include mixin.display-flex (flex, center, center);
+    margin: 1rem;
+    form{
+        .a_productos_enlace{
+            font-size: 1.5rem;
+            height: 3em;
+            border: none;
+            background-color: nth(listas.$bg-color,3);
+            color: #fff;
+            border-radius: 5px;
+        }
+    }
+}
+@media (min-width: 1024px){
+    .container_button_productos{
+        form{
+            .a_productos_enlace {
+                position: relative;
+                font-size: 14px;
+                letter-spacing: 3px;
+                height: 3em;
+                padding: 0 3em;
+                border: none;
+                background-color: nth(listas.$bg-color,3);
+                color: #fff;
+                text-transform: uppercase;
+                overflow: hidden;
+                border-radius: 5px;
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    z-index: 0;
+                    bottom: 0;
+                    left: 0;
+                    height: 0px;
+                    width: 100%;
+                    background: nth(listas.$bg-color,3);
+                    background: linear-gradient(90deg, #17A589 20%, #3498DB 100%);
+                    transition: 0.2s;
+                }
+                .label {
+                    position: relative;
+                }
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include mixin.height-width (3em,3em);
+                    position: absolute;
+                    top: 3em;
+                    right: 0;
+                    opacity: 0;
+                    transition: 0.4s;
+                }
+                &:hover {
+                    &::before {
+                        height: 100%;
+                    }
+                    .icon {
+                        top: 0;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

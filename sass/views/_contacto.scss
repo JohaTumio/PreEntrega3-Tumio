@@ -1,0 +1,110 @@
+@use "../base/extend";
+@use "../base/variables";
+@use "../base/mixin";
+@use "../base/listas";
+@use "../base/mapas";
+/* MOVILE FIRST PAG CONTACTO */
+section{
+    .section_informacion_contacto{
+        font-size: 1.5rem;
+        line-height:2;
+    }
+}
+div{
+    .p_introduccion_formulario{
+        font-size: 1.7rem;
+    }
+}
+section{
+    .contenedor_formulario{
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 2px #9C9C9C;
+        form{
+            div{
+                div{
+                    .input_consulta{
+                        border-color: #D7DBDD;
+                        color:#5D6D7E;
+                        option{
+                            font-family: map-get(mapas.$font-decoration, font-family);
+                        }
+                    }
+                }
+            }
+            div{
+                div{
+                    textarea{
+                        resize: none;
+                        height: 10em;
+                    }
+                }
+            }
+            div{
+                .input_text{
+                    font-size:small;
+                    font-family: map-get(mapas.$font-decoration, font-family);
+                }
+            }
+        }
+    }
+}
+/* VISTA TABLET PAG CONTACTO */
+@media (min-width:768px){
+    section{
+        .section_informacion_contacto{
+            font-size: 2rem;
+        }
+    }
+    div{
+        .p_introduccion_formulario{
+            font-size: 2.5rem;
+        }
+    }
+    section{
+        .contenedor_formulario{
+            font-size: 1.8rem;
+            form{
+                div{
+                    div{
+                        .input_consulta{
+                            height:3.4rem;
+                        }
+                    }
+                }
+                div{
+                    .input_text{
+                        font-size:medium;
+                    }
+                }
+            }
+        }
+    }
+}
+/* VISTA DESKTOP PAG CONTACTO */
+@media (min-width:1024px){
+    section{
+        .section_informacion_contacto{
+            font-size: 2.8rem;
+        }
+    }
+    div{
+        .p_introduccion_formulario{
+            font-size: 2.8rem;
+        }
+    }
+    section{
+        .contenedor_formulario{
+            font-size: 1.8rem;
+            form{
+                div{
+                    div{
+                        .input_text{
+                            font-size:large;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

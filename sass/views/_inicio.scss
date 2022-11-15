@@ -1,0 +1,164 @@
+@use "../base/extend";
+@use "../base/variables";
+@use "../base/mixin";
+@use "../base/listas";
+@use "../base/mapas";
+@use "../components/button-productos-inicio.scss";
+
+#body_grid{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(7, auto);
+}
+/* MOVILE FIRST INICIO */
+main{
+    .bienvenida{
+        .bienvenida_p{ 
+            font-size: 1.5rem;
+            margin: 1rem 3rem;
+            padding: 2rem;
+            border-style: nth(listas.$bordes, 2);
+            line-height: 2;
+            background-image: variables.$fondo-p-bienvenida;
+            background-repeat:no-repeat;
+            background-size: cover;
+            background-attachment:fixed;
+            font-weight: bold;
+        }
+    }
+}
+section{
+    #titulo_productos{
+        font-size: 1.5rem;
+    }
+    .productos_p{
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+    .img_productos{
+        @include mixin.display-grid (grid, 1fr, repeat(6,1fr));
+        justify-items: center;
+        row-gap: 0.5rem;
+        img{
+            @include mixin.height-width (18rem, 18rem);
+            @extend %border-radius;
+        }
+    }
+}
+div{
+    .atencion_personalizada{
+        font-size: 1.5rem;
+        margin: 1rem;
+    }
+}
+/* VISTA TABLET INICIO */
+@media (min-width: 768px){
+    main{
+        .bienvenida{
+            .bienvenida_p{
+                font-size: 2rem;
+                margin-top: 3rem;
+            }
+        }
+    }
+    section{
+        #titulo_productos{
+            font-size: 2.8rem;
+            margin: 2rem 0rem;
+        }
+        .productos_p{
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+        .img_productos{
+            @include mixin.display-grid (grid, 1fr 1fr, repeat(3, 1fr));
+            row-gap: 1rem;
+        }
+    }
+    div{
+        .atencion_personalizada{
+            font-size: 2rem;
+        }
+    }
+}
+/* VISTA DESKTOP INICIO */
+@media (min-width: 1024px){
+    .container_introduccion{
+        .p_introduccion{
+            .introduccion_a_productos{
+                //HOVER//
+                background-image: linear-gradient(
+                    to right,
+                    #54b3d6,
+                    #54b3d6 50%,
+                    #000 50%);
+                    background-size: 200% 100%;
+                    background-position: -100%;
+                    display: inline-block;
+                    padding: 5px 0;
+                    position: relative;
+                    -webkit-background-clip:text;
+                    background-clip:text;
+                    -webkit-text-fill-color: transparent;
+                    transition: all 0.3s ease-in-out;
+                    
+                    &:before{
+                        content: '';
+                        background: #54b3d6;
+                        display: block;
+                        position: absolute;
+                        bottom: -3px;
+                        left: 0;
+                        width: 0;
+                        height: 3px;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    &:hover{
+                        background-position: 0;
+                    }
+                    &:hover::before{
+                        width: 100%;
+                    }//FIN HOVER//
+            }
+        }
+    }
+    main{
+        .bienvenida{
+            @include mixin.display-flex (flex, space-around, center);
+            .bienvenida_p{
+                font-size: 2.8rem;
+                margin: 4rem 3rem;
+            }
+            .video_bienvenida{
+                display: block;
+                @include mixin.height-width (50rem,80rem);
+            }
+        }
+    }
+    section{
+        #titulo_productos{
+            font-size: 4rem;
+        }
+        .productos_p{
+            font-size: 3rem;
+            margin: 5rem;
+        }
+        .img_productos{
+            @include mixin.display-grid (grid, repeat(6, 1fr), auto);
+            img{
+                @include mixin.height-width (15rem,15rem);
+                transition: all .3s;
+                &:hover{
+                    transform: scale(1.1) translateY(-40px);
+                    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+                }
+            }
+        }
+    }
+    div{
+        .atencion_personalizada{
+            font-size: 2.3rem;
+            margin: 4rem;
+        }
+    }
+}

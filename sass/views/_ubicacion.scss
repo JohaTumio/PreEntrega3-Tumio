@@ -1,0 +1,58 @@
+@use "../base/extend";
+@use "../base/variables";
+@use "../base/mixin";
+@use "../base/listas";
+@use "../base/mapas";
+
+/* MOVILE FIRST PAG UBICACION */
+.info_contacto{
+    .lista_info_contacto{
+        list-style: map-get(mapas.$font-decoration, list-style);
+        font-size: 1.5rem;
+        margin: 2rem;
+        padding: 1rem;
+        border-style: nth(listas.$bordes, 2);
+        line-height:2;
+    }
+}
+.ubicacion_mapa{
+    display: flex;
+    justify-content: center;
+    iframe{
+        @include mixin.height-width (25rem,25rem);
+    }
+}
+/* VISTA TABLET PAG UBICACION */
+@media (min-width:768px){
+    .info_contacto{
+        .lista_info_contacto{
+            font-size: 2rem;
+            margin: 2rem;
+            padding: 2rem;
+        }
+    }
+    .ubicacion_mapa{
+        iframe{
+            @include mixin.height-width (30rem,50rem);
+        }
+    }
+}
+/* VISTA DESKTOP PAG UBICACION */
+@media (min-width:1024px){
+    .info_contacto{
+        display: flex;
+        justify-content: center;
+        .lista_info_contacto{
+            font-size: 3rem;
+            margin-bottom: 5rem;
+            width: 90rem;
+            background-image: variables.$fondo-section-ubicacion;
+        }
+    }
+    .ubicacion_mapa{
+        iframe{
+            @include mixin.height-width (40rem,80rem);
+            margin-bottom: 3rem;
+        }
+    }
+}
